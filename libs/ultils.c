@@ -7,12 +7,13 @@
 #include "../Fila/fila1.h"
 #include <unistd.h>
 #include <signal.h>
+#include "./ultils.h"
 #include <time.h>
 int geraNumeroRandom(){
       srand(time(NULL));
         return 1+(rand()%1000);
 }
-void p4Consummer(int sig,Fila *shared_area_ptr){
+void p4Consummer(int sig){
     int i;
     int valorConsumido;
       	for(;;)

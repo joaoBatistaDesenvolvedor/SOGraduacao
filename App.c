@@ -11,7 +11,6 @@
 
 
 
-
 int main(int argc, char *argv[]){
 pid_t p;
   int id=0;
@@ -41,7 +40,7 @@ pid_t p;
   }
 int i;
 	key_t key=5678;
-	Fila*shared_area_ptr;
+	
 	void *shared_memory = (void *)0;
 	int shmid;
 
