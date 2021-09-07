@@ -79,18 +79,12 @@ int i;
 */
 
   if ( id <= 3 ){
-    
-/*  Aqui vai o codigo dos processos P1, P2 e P3. 
-    Eles fazem exatamente a mesma coisa.
-    Se preferir separa-los (if-else-if) 
-    nao tem problema.
-*/
 
 for(;;)
 	{
         sem_t retornaSemafato=getSemafaro(shared_area_ptr);
 
-		     sem_wait((sem_t*)&retornaSemafato);
+		     em_wait((sem_t*)&retornaSemafato);
 			if ( getQuantidade(shared_area_ptr)==0 )
 			{
 			     for(i=0;i<maximo;i++)
@@ -103,6 +97,7 @@ for(;;)
   } 
   else 
   if ( id == 4 ){
+    int pdp4 =getpid();
       
     if(getQuantidade(shared_area_ptr)==maximo){
         signal(SIGUSR1,p4Consummer);
